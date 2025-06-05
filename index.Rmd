@@ -32,7 +32,7 @@ options(htmltools.dir.version = FALSE)
 ```
 
 ::: {.fullwidth}
-While wandering through Warsaw a couple of weeks ago during a conference, I found myself on a familiar street that I'd walked many times before—the one that passes by the University of Warsaw library. The library's exterior walls are adorned with stunning inscriptions spanning humanity's intellectual heritage: ancient Sanskrit, Hebrew, Greek, Arabic, and Latin texts alongside musical notation and iconic scientific achievements like DNA structures and Maxwell's equations.
+During my stay in Warsaw for the May IEEE 802.11 standards meeting, the usual city exploration took on a new dimension. With my hotel located in the old town near the University of Warsaw and the conference venue in the central district, the daily two-mile walks each morning and evening provided extended opportunities to discover more of the city's attractions and parks. This longer route revealed aspects of Warsaw that might have otherwise remained hidden during a typical conference visit. One such day, I found myself on a familiar street that I'd walked before—the one that passes by the University of Warsaw library. The library's exterior walls are adorned with stunning inscriptions spanning humanity's intellectual heritage: ancient Sanskrit, Hebrew, Greek, Arabic, and Latin texts alongside musical notation and iconic scientific achievements like DNA structures and Maxwell's equations.
 :::
 
 ```{r figCollatzWarsaw, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The Warsaw University Library wall featuring aspects of music,culture and sciences.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}

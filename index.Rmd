@@ -39,9 +39,7 @@ While wandering through Warsaw a couple of weeks ago during a conference, I foun
 knitr::include_graphics("images/warsaw_collatz_annotated.jpg")
 ```
 
-```{r figCollatzScatter, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "Stopping times. The stopping time of a Collatz sequence refers to the number of iterations required for a given starting value to reach 1. This fundamental measure varies dramatically across different initial values, exhibiting seemingly erratic behavior that defies simple prediction. For instance, while some numbers like powers of 2 have relatively short stopping times (since they only require repeated division by 2), others can have surprisingly long trajectories before converging to 1. The number 27, despite being relatively small, requires 111 steps to reach 1, demonstrating how stopping times can be unexpectedly large even for modest starting values. Understanding the distribution and behavior of stopping times remains one of the central challenges in Collatz conjecture research, as no general formula exists to predict the stopping time of an arbitrary positive integer without actually computing the entire sequence.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
-knitr::include_graphics("images/collatz_scatter.png")
-```
+
 
 
 ```{r figCollatz1, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "BLA", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
@@ -49,11 +47,8 @@ knitr::include_graphics("images/fig_collatz25.png")
 ```
 
 
-```{r figCollatzHist, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "Histogram of stopping times. The distribution of stopping times in Collatz sequences exhibits remarkable irregularity and has been the subject of extensive empirical investigation. Computational studies reveal that while most integers have relatively modest stopping times, the distribution has a heavy tail with occasional numbers requiring exceptionally long trajectories to reach 1. Statistical analyses suggest that stopping times appear to follow a roughly logarithmic growth pattern on average, though with substantial variance and no discernible pattern for predicting individual cases. Empirical evidence indicates that stopping times are distributed approximately according to a geometric-like distribution when properly normalized, but proving theoretical results about this distribution remains elusive. The apparent randomness in stopping time behavior has led some researchers to conjecture that Collatz sequences exhibit pseudo-random properties, making the distribution of stopping times one of the most intriguing yet unresolved aspects of the conjecture", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
-knitr::include_graphics("images/collatz_hist.png")
-```
 
-More than a decade ago, when I first encountered this wall, I was thrilled to spot Maxwell's equations among the carefully curated collection of human knowledge. But this time, something new caught my eye. Nestled above the Maxwell equations and DNA imagery was a small algorithmic snippet that I'd somehow missed before—a brief program written in Pascal.
+More than a decade ago, when first encountering this wall, I was more excited at spotting Maxwell's equations among the curated collection. But this time, something new emerged. Nestled above the Maxwell equations and DNA/RNA compound imagery was a small algorithmic snippet that had somehow been missed before—a brief program written in Pascal.
 
 What was this mysterious code doing among the greatest achievements of human civilization? Upon closer examination, the code revealed something beautifully appropriate: a program for generating the Collatz sequence, one of mathematics' most famous unsolved puzzles, quietly holding its place alongside the other monuments to human curiosity and discovery.
 
@@ -61,48 +56,78 @@ What was this mysterious code doing among the greatest achievements of human civ
 *“Don’t try to solve these problems!”* — Richard K. Guy, Amer. Math. Monthly 90 (1983), 35–41.
 ```
 
-```{marginfigure, fig.cap="A quote from Richard Guy"}
-*“So, the Collatz conjecture seems to say that there is some sort of abstract quantity like 'energy' which cannot be arbitrarily increased by adding 1. That is, no matter where you start, and no matter where this weird prime-shuffling action of adding 1 takes you, eventually the act of pulling out 2s takes enough energy out of the system so that you reach 1. I think it is for reasons like this that mathematicians suspect that a solution of the Collatz conjecture will open new horizons and develop new and important techniques in number theory.”* — Greg Muller, 2010 (math.stackechange)[https://math.stackexchange.com/questions/2694/what-is-the-importance-of-the-collatz-conjecture].
-```
+
 
 
 
 # A deceptively simple looking puzzle
 
-The Collatz conjecture^[The Collatz conjecture goes by numerous names, including the 3n+1 problem, the 3x+1 problem, Ulam's conjecture, Thwaites' conjecture, and the Syracuse problem, among others. The problem's origins appear to stem from Lothar Collatz's notebooks dating to the 1930s and was circulating among mathematicians by the 1950s [XX]. The earliest published reference appears to be H. S. Coxeter's 1971 written lecture [XX]. For a comprehensive exploration of the problem's history, background, and broader mathematical significance, Jeffrey C. Lagarias's survey article provides an excellent resource [XX].] stands as one of mathematics' most tantalizingly simple yet stubbornly unsolved problems. Named after German mathematician Lothar Collatz, who proposed it in 1937, this conjecture deals with a deceptively straightforward process that has confounded mathematicians for nearly a century. As it stands there is money^[https://www.prnewswire.com/news-releases/bakuage-offers-prize-of-120-million-jpy-to-whoever-solves-collatz-conjecture-math-problem-unsolved-for-84-years-301326629.html] to be made if you can prove this one way or the other^[https://mathprize.net/posts/collatz-conjecture/]! The problem itself has gotten into popular culture in the recent years, including xkcd^[March 5, 2010, https://xkcd.com/710/]]
+The Collatz conjecture^[The Collatz conjecture goes by numerous names, including the 3n+1 problem, the 3x+1 problem, Ulam's conjecture, Thwaites' conjecture, and the Syracuse problem, among others. The problem's origins appear to stem from Lothar Collatz's notebooks dating to the 1930s and was circulating among mathematicians by the 1950s [XX]. The earliest published reference appears to be H. S. Coxeter's 1971 written lecture [XX]. For a comprehensive exploration of the problem's history, background, and broader mathematical significance, Jeffrey C. Lagarias's survey article provides an excellent resource [XX].] stands as one of mathematics' most tantalizingly simple yet stubbornly unsolved problems. Named after German mathematician Lothar Collatz [^LotharCollatz], who proposed it in 1937, this conjecture deals with a deceptively straightforward process that has confounded mathematicians for nearly a century. 
+
+[^LotharCollatz]: Lothar Collatz, among other things have played a key role in the founding of spectral graph theory. https://en.wikipedia.org/wiki/Lothar_Collatz
 
 ```{r figCollatz1Margin, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "Collatz sequence for n=27. The sequence reaches 1 in 111 steps, making it one of the longer Collatz sequences for numbers under 30. ", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/fig_collatz27_math.png")
 ```
 
-The rules are almost childishly simple. Take any positive integer. If it's even, divide it by two. If it's odd, multiply by three and add one. Repeat this process with each resulting number. The Collatz conjecture^[Let $\mathbb{N} = \{0,1,2,\ldots\}$ denote the set of natural numbers and $\mathbb{N}^+ = \{1,2,\ldots\}$ denote the positive integers. The Collatz process involves repeatedly applying the function $C(x) = x/2$ for even $x \in \mathbb{N}$ and $C(x) = 3x + 1$ for odd $x$. Since $3x + 1$ yields an even result whenever $x$ is odd, we can define a streamlined variant $T$ where $T(x) = x/2$ for even $x$ and $T(x) = (3x + 1)/2$ for odd $x$. The Collatz conjecture asserts that repeated application of either $T$ or $C$ to any positive integer $x \in \mathbb{N}^+$ eventually reaches 1. Throughout this work, we employ $T$ exclusively due to its computational advantages^4^. As an example, applying $T$ iteratively starting from $x = 45$ produces:] claims that no matter which positive integer you start with, you will always eventually reach the number 1.
+The rules are almost childishly simple. Take any positive integer. If it's even, divide it by two. If it's odd, multiply by three and add one. Repeat this process with each resulting number. The Collatz conjecture^[The process can be formalized mathematically as: Let $\mathbb{N} = \{0,1,2,\ldots\}$ denote the set of natural numbers and $\mathbb{N}^+ = \{1,2,\ldots\}$ denote the positive integers. The Collatz process involves repeatedly applying the function $f(x) = x/2$ for even $x \in \mathbb{N}$ and $f(x) = 3x + 1$ for odd $x$. Since $3x + 1$ yields an even result whenever $x$ is odd, we can define a streamlined variant $T$ where $T(x) = x/2$ for even $x$ and $T(x) = (3x + 1)/2$ for odd $x$. The Collatz conjecture asserts that repeated application of either $T$ or $f$ to any positive integer $x \in \mathbb{N}^+$ eventually reaches 1.] claims that no matter which positive integer you start with, you will always eventually reach the number 1.
 
-Consider starting with 7, an arbitrary odd number. Following our rules: 7 becomes 22 (3×7+1), then 11, then 34, then 17, then 52, then 26, then 13, then 40, then 20, then 10, then 5, then 16, then 8, then 4, then 2, and finally 1. Once you reach 1, the sequence enters an endless loop: 1, 4, 2, 1, 4, 2, and so on.
+Consider starting with 7, an arbitrary odd number. Following our rules: 7 becomes $22 = 3 \times 7+1$, then 11, then 34, then 17, then 52, then 26, then 13, then 40, then 20, then 10, then 5, then 16, then 8, then 4, then 2, and finally 1. Once you reach 1, the sequence enters an endless loop: 1, 4, 2, 1, 4, 2, and so on.
 
-This behavior has been verified for every starting number tested, including all integers up to approximately 2^68—that's roughly 295 quintillion numbers, Barina<sup>[1](#ref1)</sup>. Computers have crunched through these calculations for decades, yet not a single counterexample has emerged. Despite this overwhelming computational evidence, no one has managed to prove that the pattern holds universally.
+This behavior has been verified for every starting number tested, including all integers up to approximately $2^{68}$—that's roughly 295 quintillion numbers<sup>[1](#ref1)</sup> [^barina2021]. Computers have crunched through these calculations for decades, yet not a single counterexample has emerged. Despite this overwhelming computational evidence, no one has managed to prove that the pattern holds universally. 
 
-In modular arithmetic notation, define the function $f$ as follows:
+[^barina2021]: Barina, D. et al. (2021). Computational verification of the Collatz conjecture.
+
+Mathematically, the function mapping takes the form:
+
+$$f(x) = \begin{cases}
+x/2 & \text{if } x \in \text{even} \\
+3x + 1 & \text{if } x \in \text{odd}
+\end{cases}$$
+
+In modular arithmetic notation, $f$ can be expressed as follows:
 
 $$f(x) = \begin{cases}
 x/2 & \text{if } x \equiv 0 \pmod{2} \\
 3x + 1 & \text{if } x \equiv 1 \pmod{2}
 \end{cases}$$
 
-Alternatively, for the streamlined variant $T$:
+The conjecture states that regardless of the starting number $x$, the sequence will eventually reach $1$ after a finite number of steps, at which point it enters the perpetual cycle $4 \to 2 \to 1 \to 4$.
+
+
+```{marginfigure, fig.cap=" With T(x)"}
+Instead of the classic Collatz mapping $f(x)$, a streamlined variant $T(x)$ can also be used.:
 
 $$T(x) = \begin{cases}
-x/2 & \text{if } x \equiv 0 \pmod{2} \\
-(3x + 1)/2 & \text{if } x \equiv 1 \pmod{2}
+x/2 \quad \quad \quad  \text{if } x \equiv 0 \pmod{2} \\
+(3x + 1)/2 \quad \text{if } x \equiv 1 \pmod{2}
 \end{cases}$$
+
+The Collatz sequence starting from $x = 21$ using the function $T$ is:
+
+$$21 \to 32 \to 16 \to 8 \to 4 \to 2 \to 1$$
+
+Step by step:
+- $T(21) = (3 \cdot 21 + 1)/2 = 64/2 = 32$ (since 21 is odd)
+- $T(32) = 32/2 = 16$ (since 32 is even)
+- $T(16) = 16/2 = 8$ (since 16 is even)
+- $T(8) = 8/2 = 4$ (since 8 is even)
+- $T(4) = 4/2 = 2$ (since 4 is even)
+- $T(2) = 2/2 = 1$ (since 2 is even)
+
+The sequence reaches 1 in 6 steps. However, this report focuses exclusively on $f(x)$. 
+
 
 
 ```{r figCollatzTree1, fig.margin = FALSE, fig.width= 8, fig.height= 8, fig.cap = "First 25 collatz sequences. The numbers 1 to 25 are shown as white marbles. Visually the tree strucure appears with 1 as the root.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/fig_collatz_tree_math25.png")
 ```
 
+```{r figAll, fig.margin = TRUE, fig.cap = "The Collatz conjecture has gained significant attention in recent years, with substantial monetary prizes offered for its resolution and appearances in popular culture, including references in webcomics such as this. The enduring appeal of this problem lies in its accessibility—anyone can understand the basic concept—yet its proof remains elusive despite extensive mathematical investigation.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+knitr::include_graphics("images/collatz_conjecture_xkcd.png")
+```
 
-
-The Collatz sequence starting from $x = 21$ using the function $f$ is:
+Similarly, the sequence starting from $x = 21$ using the function $f$ is:
 
 $$21 \to 64 \to 32 \to 16 \to 8 \to 4 \to 2 \to 1$$
 
@@ -142,6 +167,8 @@ Step by step:
 
 The sequence reaches 1 in 17 steps.
 
+
+
 The conjecture's difficulty lies in its chaotic nature. Small changes in starting values can lead to dramatically different trajectories. Some numbers reach 1 quickly, while others embark on wild journeys, soaring to heights thousands of times larger than their starting point before eventually descending. The number 27, for instance, reaches a peak of 9,232 during its 111-step journey to 1.
 
 ::: {.fullwidth}
@@ -172,9 +199,7 @@ Perhaps most remarkably, the Collatz conjecture serves as a reminder that in mat
 
 
 
-```{r figAll, fig.margin = TRUE, fig.cap = "TBD.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
-knitr::include_graphics("images/collatz_conjecture_xkcd.png")
-```
+
 
 # Visualizing the Collatz sequence
 
@@ -199,21 +224,7 @@ In this forward-flowing tree, different positive integers begin on separate bran
 
 
 
-```{marginfigure, fig.cap=" With T(x)"}
-The Collatz sequence starting from $x = 21$ using the function $T$ is:
 
-$$21 \to 32 \to 16 \to 8 \to 4 \to 2 \to 1$$
-
-Step by step:
-- $T(21) = (3 \cdot 21 + 1)/2 = 64/2 = 32$ (since 21 is odd)
-- $T(32) = 32/2 = 16$ (since 32 is even)
-- $T(16) = 16/2 = 8$ (since 16 is even)
-- $T(8) = 8/2 = 4$ (since 8 is even)
-- $T(4) = 4/2 = 2$ (since 4 is even)
-- $T(2) = 2/2 = 1$ (since 2 is even)
-
-The sequence reaches 1 in 6 steps.
-```
 
 ::: {.fullwidth}
 ## Collatz sequences like ocean plants 
@@ -272,12 +283,22 @@ The standard approach to complexifying the Collatz function replaces the parity 
 $$f(z) = \frac{1}{4}  \left( 2 + 7z - (2 + 5z)\cos{\pi z} \right)$$
 This formulation smoothly interpolates between the two Collatz operations: when z is an even integer, $\cos(\pi z) = 1$, giving $f(z) = z/2$. When z is an odd integer, the reverse occurs, yielding $f(z) = 3z + 1$.
 
+```{r figCollatzScatter, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "Stopping times. The stopping time of a Collatz sequence refers to the number of iterations required for a given starting value to reach 1. This fundamental measure varies dramatically across different initial values, exhibiting seemingly erratic behavior that defies simple prediction. For instance, while some numbers like powers of 2 have relatively short stopping times (since they only require repeated division by 2), others can have surprisingly long trajectories before converging to 1. The number 27, despite being relatively small, requires 111 steps to reach 1, demonstrating how stopping times can be unexpectedly large even for modest starting values. Understanding the distribution and behavior of stopping times remains one of the central challenges in Collatz conjecture research, as no general formula exists to predict the stopping time of an arbitrary positive integer without actually computing the entire sequence.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+knitr::include_graphics("images/collatz_scatter.png")
+```
+
+```{r figCollatzHist, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "Histogram of stopping times. The distribution of stopping times in Collatz sequences exhibits remarkable irregularity and has been the subject of extensive empirical investigation. Computational studies reveal that while most integers have relatively modest stopping times, the distribution has a heavy tail with occasional numbers requiring exceptionally long trajectories to reach 1. Statistical analyses suggest that stopping times appear to follow a roughly logarithmic growth pattern on average, though with substantial variance and no discernible pattern for predicting individual cases. Empirical evidence indicates that stopping times are distributed approximately according to a geometric-like distribution when properly normalized, but proving theoretical results about this distribution remains elusive. The apparent randomness in stopping time behavior has led some researchers to conjecture that Collatz sequences exhibit pseudo-random properties, making the distribution of stopping times one of the most intriguing yet unresolved aspects of the conjecture", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+knitr::include_graphics("images/collatz_hist.png")
+```
+
 ## Fractal Emergence
 Iterating this complex Collatz function produces remarkable fractal patterns. The key lies in studying the basins of attraction—regions in the complex plane where initial values converge to specific behaviors under iteration. Some trajectories spiral toward fixed points, others exhibit periodic behavior, and many diverge to infinity in intricate spiral patterns.
 
 The boundary between convergent and divergent regions forms a fractal with infinite detail at every scale. Unlike the relatively simple dynamics on the real line, the complex plane reveals tendrils, spirals, and self-similar structures that extend infinitely. These patterns often exhibit characteristics reminiscent of the fractal images seen elsewhere.
 
-
+```{marginfigure, fig.cap="A quote from stackechange Greg Muller"}
+*“So, the Collatz conjecture seems to say that there is some sort of abstract quantity like 'energy' which cannot be arbitrarily increased by adding 1. That is, no matter where you start, and no matter where this weird prime-shuffling action of adding 1 takes you, eventually the act of pulling out 2s takes enough energy out of the system so that you reach 1. I think it is for reasons like this that mathematicians suspect that a solution of the Collatz conjecture will open new horizons and develop new and important techniques in number theory.”* — Greg Muller, 2010 (math.stackechange)[https://math.stackexchange.com/questions/2694/what-is-the-importance-of-the-collatz-conjecture].
+```
 
 ## Connections to Number Theory
 The fractal structure of the complex Collatz function provides geometric insights into the original conjecture. Regions of convergence in the complex plane can illuminate why certain integer sequences behave as they do. The fractal boundaries might encode information about the distribution of Collatz trajectory lengths or reveal hidden patterns in the conjecture's behavior.
@@ -298,11 +319,17 @@ The study of complex Collatz fractals represents more than mathematical artistry
 <a name="ref2a"></a>
 3. Lagarias JC, editor. The Ultimate Challenge: The $3 x+ 1$ Problem. American Mathematical Society; 2023 Apr 19.
 
-<a name="ref3"></a>
+<a name="ref4"></a>
 4. Tao, Terence. "Almost all orbits of the Collatz map attain almost bounded values." In Forum of Mathematics, Pi, vol. 10, p. e12. Cambridge University Press, 2022.
 
-<a name="ref4"></a>
+<a name="ref5"></a>
 5. Coxeter, H. S. M. "Cyclic sequences and frieze patterns." The Ultimate Challenge: The (1971): 211-217.
+
+<a name="ref6"></a>
+6. https://www.prnewswire.com/news-releases/bakuage-offers-prize-of-120-million-jpy-to-whoever-solves-collatz-conjecture-math-problem-unsolved-for-84-years-301326629.html
+
+<a name="ref7"></a>
+7. https://mathprize.net/posts/collatz-conjecture/
 
 
 

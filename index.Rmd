@@ -42,7 +42,7 @@ knitr::include_graphics("images/warsaw_collatz_annotated.jpg")
 
 
 
-```{r figCollatz1, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "BLA", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+```{r figCollatz1, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The first 25 Collatz sequences.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/fig_collatz25.png")
 ```
 
@@ -190,7 +190,7 @@ $$\begin{align}
 
 
 
-What makes the Collatz conjecture particularly fascinating is how it embodies the tension between simplicity and complexity that pervades mathematics. The problem requires no advanced mathematical background to understand, yet it has resisted the efforts of some of the world's brightest mathematical minds^[The Collatz conjecture remains one of mathematics' most intractable problems, with a solution appearing distant despite over fifty years of intensive research efforts. Jeffrey C. Lagarias has provided excellent comprehensive coverage of this research in his surveys and dedicated monograph on the subject [100, 101, 96]. Currently, the most significant advance toward resolving the conjecture comes from Terrence Tao, who demonstrated that almost all positive integers eventually reach 1 under Collatz iterations, at least in a probabilistic sense [159]. The problem's notorious difficulty is captured in Paul Erdős's famous assessment that "Mathematics is not yet ready for such problems," and he reportedly characterized it as "Hopeless. Absolutely hopeless." [102]. The conjecture's daunting nature is further emphasized by its inclusion as Problem 2 in Richard Guy's cautionary 1983 paper "Don't try to solve these problems!"]. Fields Medal winner Terence Tao has made significant progress on related problems, but the full conjecture remains open.
+What makes the Collatz conjecture particularly fascinating is how it embodies the tension between simplicity and complexity that pervades mathematics. The problem requires no advanced mathematical background to understand, yet it has resisted the efforts of some of the world's brightest mathematical minds^[The Collatz conjecture remains one of mathematics' most intractable problems, with a solution appearing distant despite over fifty years of intensive research efforts. Jeffrey C. Lagarias has provided excellent comprehensive coverage of this research in his surveys and dedicated monograph on the subject [100, 101, 96]. Currently, the most significant advance toward resolving the conjecture comes from Terrence Tao, who demonstrated that almost all positive integers eventually reach 1 under Collatz iterations, at least in a probabilistic sense (Tao also has a blog post on this topic dated in 2019 [https://terrytao.wordpress.com/2019/09/10/almost-all-collatz-orbits-attain-almost-bounded-values/]). The problem's notorious difficulty is captured in Paul Erdős's famous assessment that "Mathematics is not yet ready for such problems," and he reportedly characterized it as "Hopeless. Absolutely hopeless." [102]. The conjecture's daunting nature is further emphasized by its inclusion as Problem 2 in Richard Guy's cautionary 1983 paper "Don't try to solve these problems!"]. Fields Medal winner Terence Tao has made significant progress on related problems, but the full conjecture remains open.
 
 The conjecture connects to deep areas of mathematics including number theory, dynamical systems, and computational complexity. Some mathematicians have developed sophisticated techniques to analyze special cases or prove weaker versions of the statement, but the general problem maintains its grip on the mathematical imagination.
 
@@ -239,11 +239,12 @@ The Collatz tree structure remarkably resembles underwater kelp forests or coral
 
 The numerous branches spread outward like fronds or coral polyps, each following its own meandering path through the mathematical seascape before being swept into the main current. Just as kelp forests create dense, layered canopies with multiple organisms sharing the same water column, different Collatz sequences occupy overlapping numerical territories, eventually merging into common channels like schools of fish converging toward feeding grounds.
 
-The longer, more complex sequences resembling the flowing tendrils of giant kelp that drift and undulate before joining the deeper currents, while shorter sequences mirror the direct, upward growth of simpler marine plants. This aquatic metaphor captures the organic, almost living quality of the Collatz structure, where mathematical sequences flow together in patterns that echo the natural convergent behavior found in ocean ecosystems, creating a unified, tree-like organism rooted in the bedrock of 1.
+The intricate sequences branch and flow like underwater kelp forests, with longer, complex paths resembling graceful tendrils that drift and undulate through mathematical space before merging into deeper currents. Shorter sequences mirror the direct, upward growth of simpler aquatic vegetation. This oceanic analogy reflects the organic, almost biological nature of Collatz dynamics, where numerical sequences converge in patterns reminiscent of natural ecosystems—all flowing together to form a unified, tree-like structure anchored at the fundamental point of 1.
+The visualization below, created in Julia and inspired by the elegant work at https://github.com/dkobak/collatz-viz, illustrates this phenomenon by mapping the first 10,000 Collatz sequences, revealing the striking botanical architecture that emerges from pure mathematical iteration.
 
 ::: {.fullwidth}
 
-```{r figCollatz10K, fig.margin = FALSE, fig.fullwidth = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The first 10000 collatz sequences depicted like an underwater plant swaying under the influence of the ocean current.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+```{r figCollatz10K, fig.margin = FALSE, fig.fullwidth = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The first 10000 collatz sequences depicted like an underwater plant swaying under the influence of the ocean current. This is an image that I generated using Julia (See the package CollatzConjecture.jl which has routines to reproduce this image) after deriving motivation from this image [https://upload.wikimedia.org/wikipedia/commons/8/8f/Collatz_conjecture_tree_visualization.png]", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/fig_collatz10K.png")
 ```
 :::
@@ -331,14 +332,9 @@ Iterating this complex Collatz function produces remarkable fractal patterns. Th
 
 The boundary between convergent and divergent regions forms a fractal with infinite detail at every scale. Unlike the relatively simple dynamics on the real line, the complex plane reveals tendrils, spirals, and self-similar structures that extend infinitely. These patterns often exhibit characteristics reminiscent of the fractal images seen elsewhere.
 
-```{marginfigure, fig.cap="A quote from stackechange Greg Muller"}
-*“So, the Collatz conjecture seems to say that there is some sort of abstract quantity like 'energy' which cannot be arbitrarily increased by adding 1. That is, no matter where you start, and no matter where this weird prime-shuffling action of adding 1 takes you, eventually the act of pulling out 2s takes enough energy out of the system so that you reach 1. I think it is for reasons like this that mathematicians suspect that a solution of the Collatz conjecture will open new horizons and develop new and important techniques in number theory.”* — Greg Muller, 2010 (math.stackechange)[https://math.stackexchange.com/questions/2694/what-is-the-importance-of-the-collatz-conjecture].
+```{marginfigure, fig.cap="A quote from stackexchange Greg Muller"}
+*“So, the Collatz conjecture seems to say that there is some sort of abstract quantity like 'energy' which cannot be arbitrarily increased by adding 1. That is, no matter where you start, and no matter where this weird prime-shuffling action of adding 1 takes you, eventually the act of pulling out 2s takes enough energy out of the system so that you reach 1. I think it is for reasons like this that mathematicians suspect that a solution of the Collatz conjecture will open new horizons and develop new and important techniques in number theory.”* — Greg Muller, 2010 (math.stackexchange)[https://math.stackexchange.com/questions/2694/what-is-the-importance-of-the-collatz-conjecture].
 ```
-
-## Connections to Number Theory
-The fractal structure of the complex Collatz function provides geometric insights into the original conjecture. Regions of convergence in the complex plane can illuminate why certain integer sequences behave as they do. The fractal boundaries might encode information about the distribution of Collatz trajectory lengths or reveal hidden patterns in the conjecture's behavior.
-
-Color-coding points by convergence rate, trajectory length, or limiting behavior produces images of extraordinary complexity and aesthetic appeal. 
 
 # Whats the meaning of all these afterall?
 
@@ -346,7 +342,7 @@ The exploration of complex Collatz fractals reveals something profound about the
 
 Greg Muller's compelling perspective from a 2010 math.stackexchange discussion captures the deeper philosophical implications beautifully: 
 
-*“So, the Collatz conjecture seems to say that there is some sort of abstract quantity like 'energy' which cannot be arbitrarily increased by adding 1. That is, no matter where you start, and no matter where this weird prime-shuffling action of adding 1 takes you, eventually the act of pulling out 2s takes enough energy out of the system so that you reach 1. I think it is for reasons like this that mathematicians suspect that a solution of the Collatz conjecture will open new horizons and develop new and important techniques in number theory.”* — Greg Muller, 2010 (math.stackechange)[https://math.stackexchange.com/questions/2694/what-is-the-importance-of-the-collatz-conjecture].
+*“So, the Collatz conjecture seems to say that there is some sort of abstract quantity like 'energy' which cannot be arbitrarily increased by adding 1. That is, no matter where you start, and no matter where this weird prime-shuffling action of adding 1 takes you, eventually the act of pulling out 2s takes enough energy out of the system so that you reach 1. I think it is for reasons like this that mathematicians suspect that a solution of the Collatz conjecture will open new horizons and develop new and important techniques in number theory.”* — Greg Muller, 2010 (math.stackexchange)[https://math.stackexchange.com/questions/2694/what-is-the-importance-of-the-collatz-conjecture].
 
 This observation illuminates why the Collatz conjecture continues to captivate mathematicians worldwide. Far from being merely an abstract curiosity, it may hold keys to understanding fundamental principles governing mathematical systems—principles that could revolutionize our approach to number theory and unlock entirely new mathematical territories. The journey from an ordinary looking puzzle to these mesmerizing fractal landscapes reminds us that mathematics remains humanity's greatest adventure, where the simplest questions often lead to the most extraordinary detour and possible new discoveries.
 

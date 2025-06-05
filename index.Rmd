@@ -116,7 +116,7 @@ Step by step:
 - $T(2) = 2/2 = 1$ (since 2 is even)
 
 The sequence reaches 1 in 6 steps. However, this report focuses exclusively on $f(x)$. 
-
+```
 
 
 ```{r figCollatzTree1, fig.margin = FALSE, fig.width= 8, fig.height= 8, fig.cap = "First 25 collatz sequences. The numbers 1 to 25 are shown as white marbles. Visually the tree strucure appears with 1 as the root.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
@@ -201,12 +201,21 @@ Perhaps most remarkably, the Collatz conjecture serves as a reminder that in mat
 
 
 
-# Visualizing the Collatz sequence
+# Visualizing the Collatz sequences
 
 Personally, the most catchy aspect of this puzzle is the structure and geometry of the sequence. Since the conjecture points to the inevitability of tracing to a fixed point loop into $2 \to 1 $, it naturally gives rise to a fascinating tree structure, where multiple starting values converge along shared pathways before ultimately reaching the root at 1. 
 
-```{r figCollatz20Kmath, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The first 10000 collatz sequences.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
-knitr::include_graphics("images/collatz_math_10k.png")
+
+
+## Collatz twig
+
+```{r figCollatzTree3DFull, fig.fullwidth=TRUE,fig.margin = FALSE, fig.cap = "The first 10000 collatz sequences as a graph.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+knitr::include_graphics("images/collatz_math_10k_3D.png")
+```
+
+
+```{r figCollatz20Kmath, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The first 15000 collatz sequences as a graph resembling a snow flake.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+knitr::include_graphics("images/fig_collatz_snow15.png")
 ```
 
 
@@ -214,11 +223,8 @@ knitr::include_graphics("images/collatz_math_10k.png")
 knitr::include_graphics("images/collatz_river.png")
 ```
 
-## Collatz twig
 
-```{r figCollatzTree3DFull, fig.margin = FALSE, fig.cap = "3D view of the collatz sequence.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
-knitr::include_graphics("images/collatz_math_10k_3D.png")
-```
+
 
 In this forward-flowing tree, different positive integers begin on separate branches but gradually merge as their sequences progress, creating a river-like pattern where tributaries join the main stream. For example, the sequences from 8, 16, 32, and other powers of 2 form a simple linear branch leading directly to 1, while more complex starting values like 27 or 15 follow winding paths that eventually intersect with simpler trajectories. The tree structure reveals how certain intermediate values, such as 4, 2, and 1, serve as convergence points where multiple sequences unite, creating bottlenecks in the flow toward the root. This convergent behavior demonstrates the conjecture's claim that all paths eventually funnel into the same final sequence ($4 \to 2 \to 1$), regardless of their diverse and seemingly chaotic initial trajectories. The tree's branching complexity reflects the unpredictable nature of Collatz sequences while illustrating the underlying unity that the conjecture asserts exists among all positive integers. 
 
@@ -226,22 +232,21 @@ In this forward-flowing tree, different positive integers begin on separate bran
 
 
 
-::: {.fullwidth}
+
 ## Collatz sequences like ocean plants 
 
 The Collatz tree structure remarkably resembles underwater kelp forests or coral formations, with their characteristic flowing, organic architecture. Like ocean plants swaying in deep currents, the Collatz sequences exhibit a graceful, fluid motion as they cascade from diverse starting points toward the central root at 1. 
 
 The numerous branches spread outward like fronds or coral polyps, each following its own meandering path through the mathematical seascape before being swept into the main current. Just as kelp forests create dense, layered canopies with multiple organisms sharing the same water column, different Collatz sequences occupy overlapping numerical territories, eventually merging into common channels like schools of fish converging toward feeding grounds.
 
+The longer, more complex sequences resembling the flowing tendrils of giant kelp that drift and undulate before joining the deeper currents, while shorter sequences mirror the direct, upward growth of simpler marine plants. This aquatic metaphor captures the organic, almost living quality of the Collatz structure, where mathematical sequences flow together in patterns that echo the natural convergent behavior found in ocean ecosystems, creating a unified, tree-like organism rooted in the bedrock of 1.
+
+::: {.fullwidth}
 
 ```{r figCollatz10K, fig.margin = FALSE, fig.fullwidth = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The first 10000 collatz sequences depicted like an underwater plant swaying under the influence of the ocean current.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/fig_collatz10K.png")
 ```
-
- The longer, more complex sequences resembling the flowing tendrils of giant kelp that drift and undulate before joining the deeper currents, while shorter sequences mirror the direct, upward growth of simpler marine plants. This aquatic metaphor captures the organic, almost living quality of the Collatz structure, where mathematical sequences flow together in patterns that echo the natural convergent behavior found in ocean ecosystems, creating a unified, tree-like organism rooted in the bedrock of 1.
-
 :::
-
 
 
 
@@ -252,16 +257,48 @@ While the traditional Collatz function involves repeatedly applying the rule "if
 
 
 
-```{r figFractal1, fig.margin = FALSE,fig.fullwidth = FALSE, fig.cap = "Collatz fractal. This is a familiar image that is widely shared over internet such as [https://njohnston.ca/2009/06/the-collatz-conjecture-as-a-fractal/] ", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+```{r figFractal1, fig.margin = FALSE,fig.fullwidth = TRUE, fig.cap = "Collatz fractal. This is a familiar image that is widely shared over internet such as [https://njohnston.ca/2009/06/the-collatz-conjecture-as-a-fractal/] ", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/collatz_fractal_demo.png")
 ```
+
+
+```{r figCollatzHangingTree1000, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The first 1000 Collatz sequences shown as a graph resembling decorative beeds hanging. ", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+knitr::include_graphics("images/fig_collatz_hanging_tree_1000.png")
+```
+
+Fractals represent infinitely complex, self-repeating patterns that maintain their structure across multiple scales. These mathematical objects emerge from the iterative application of simple processes through recursive feedback loops, generating visual representations of dynamic systems and chaotic behavior. Geometrically, fractals occupy non-integer dimensions, existing between the conventional whole-number dimensions of classical geometry.
+These intricate patterns pervade the natural world, appearing in diverse forms such as branching tree structures, meandering river networks, irregular coastlines, mountain ranges, cloud formations, spiral seashells, and swirling hurricane systems. The ubiquity of fractal geometry in nature reflects the underlying mathematical principles that govern complex systems and organic growth processes.
 
 ```{r figFracMarg1, fig.margin = TRUE, fig.cap = "Fractal behavior near n=77, within 25 iterations of the collatz process evolution.", message=TRUE, cache=TRUE, echo=FALSE, out.width='120%'}
 knitr::include_graphics("images/collatz_fractal_zoom-n77.0-maxIter25.png")
 ```
 
+## Collatz fractal
+
+Extending the Collatz function to the complex plane requires replacing the discrete parity test with a continuous analogue, since the concept of "even" or "odd" doesn't directly apply to complex numbers.
+
+The original integer-based Collatz function can be rewritten in several equivalent forms:
+
+$$\begin{aligned}
+f(z) &= \begin{cases}
+z/2 & \text{if } z \equiv 0 \pmod{2} \\
+3z + 1 & \text{if } z \equiv 1 \pmod{2}
+\end{cases} \\
+&= \left(1 + (-1)^{z}\right) \frac{z}{4} + \left(1 - (-1)^{z}\right) \frac{3z+1}{2} \\
+&= \frac{1}{4}  \left( 2 + 7z - (2 + 5z) (-1)^{z} \right)
+\end{aligned}$$
+
+The key insight for complexification comes from recognizing that for integer values of $z$, we have $\cos(\pi z) = (-1)^z$. This trigonometric identity provides a pathway to extend the function beyond integers to the entire complex plane.
+
+Substituting this relationship yields the complex-extended Collatz function:
+
+$$f(z) = \frac{1}{4}  \left( 2 + 7z - (2 + 5z)\cos(\pi z) \right)$$
+
+This elegant formulation preserves the original behavior on integers while enabling smooth interpolation between the two Collatz operations. When $z$ is even, $\cos(\pi z) = 1$, recovering $f(z) = z/2$. When $z$ is odd, $\cos(\pi z) = -1$, yielding $f(z) = 3z + 1$. For non-integer complex values, the cosine function creates a continuous bridge between these discrete cases, allowing the Collatz process to operate seamlessly across the complex plane. 
+
+
 ::: {.fullwidth} 
-Collatz conjecture.
+
 
 ```{r figFracFull, fig.fullwidth = TRUE, fig.margin = FALSE, fig.cap = "Collatz fractal behavior at different integer boundaries. Here the behavior is captured with a maximum of 26 iterations. The escape criterion is $\\lvert z \\rvert > 10000$ and the convergence criterion is $\\lvert z \\rvert <2$. ", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/collatz_grid_3x3.png")
@@ -279,9 +316,7 @@ knitr::include_graphics("images/collatz_grid_3x3_fine.png")
 :::
 
 
-The standard approach to complexifying the Collatz function replaces the parity test with a continuous analogue. Since determining whether a complex number is "even" or "odd" isn't straightforward, mathematicians typically use the function:
-$$f(z) = \frac{1}{4}  \left( 2 + 7z - (2 + 5z)\cos{\pi z} \right)$$
-This formulation smoothly interpolates between the two Collatz operations: when z is an even integer, $\cos(\pi z) = 1$, giving $f(z) = z/2$. When z is an odd integer, the reverse occurs, yielding $f(z) = 3z + 1$.
+
 
 ```{r figCollatzScatter, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "Stopping times. The stopping time of a Collatz sequence refers to the number of iterations required for a given starting value to reach 1. This fundamental measure varies dramatically across different initial values, exhibiting seemingly erratic behavior that defies simple prediction. For instance, while some numbers like powers of 2 have relatively short stopping times (since they only require repeated division by 2), others can have surprisingly long trajectories before converging to 1. The number 27, despite being relatively small, requires 111 steps to reach 1, demonstrating how stopping times can be unexpectedly large even for modest starting values. Understanding the distribution and behavior of stopping times remains one of the central challenges in Collatz conjecture research, as no general formula exists to predict the stopping time of an arbitrary positive integer without actually computing the entire sequence.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/collatz_scatter.png")
@@ -305,8 +340,15 @@ The fractal structure of the complex Collatz function provides geometric insight
 
 Color-coding points by convergence rate, trajectory length, or limiting behavior produces images of extraordinary complexity and aesthetic appeal. 
 
-## Mathematical Significance
-The study of complex Collatz fractals represents more than mathematical artistry. The complex Collatz fractals ultimately illustrate how a simple discrete rule, when extended thoughtfully to the complex plane, can generate infinite complexity and beauty while potentially offering new perspectives on one of mathematics' most enduring mysteries.
+# Whats the meaning of all these afterall?
+
+The exploration of complex Collatz fractals reveals something profound about the nature of mathematical truth itself. These stunning visualizations demonstrate how a deceptively simple rule can unleash boundless complexity and unexpected beauty when extended into the complex plane, offering potentially transformative insights into one of mathematics' greatest unsolved puzzles.
+
+Greg Muller's compelling perspective from a 2010 math.stackexchange discussion captures the deeper philosophical implications beautifully: 
+
+*“So, the Collatz conjecture seems to say that there is some sort of abstract quantity like 'energy' which cannot be arbitrarily increased by adding 1. That is, no matter where you start, and no matter where this weird prime-shuffling action of adding 1 takes you, eventually the act of pulling out 2s takes enough energy out of the system so that you reach 1. I think it is for reasons like this that mathematicians suspect that a solution of the Collatz conjecture will open new horizons and develop new and important techniques in number theory.”* — Greg Muller, 2010 (math.stackechange)[https://math.stackexchange.com/questions/2694/what-is-the-importance-of-the-collatz-conjecture].
+
+This observation illuminates why the Collatz conjecture continues to captivate mathematicians worldwide. Far from being merely an abstract curiosity, it may hold keys to understanding fundamental principles governing mathematical systems—principles that could revolutionize our approach to number theory and unlock entirely new mathematical territories. The journey from an ordinary looking puzzle to these mesmerizing fractal landscapes reminds us that mathematics remains humanity's greatest adventure, where the simplest questions often lead to the most extraordinary detour and possible new discoveries.
 
 # References
 

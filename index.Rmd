@@ -203,7 +203,7 @@ Perhaps most remarkably, the Collatz conjecture serves as a reminder that in mat
 
 # Visualizing the Collatz sequences
 
-Personally, the most catchy aspect of this puzzle is the structure and geometry of the sequence. Since the conjecture points to the inevitability of tracing to a fixed point loop into $2 \to 1 $, it naturally gives rise to a fascinating tree structure, where multiple starting values converge along shared pathways before ultimately reaching the root at 1. 
+Personally, the most catchy aspect of this puzzle is the structure and geometry of the sequence. Since the conjecture points to the inevitability of tracing to a fixed point loop into $2 \to 1$, it naturally gives rise to a fascinating tree structure, where multiple starting values converge along shared pathways before ultimately reaching the root at 1. 
 
 
 

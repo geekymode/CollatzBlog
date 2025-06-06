@@ -3,7 +3,7 @@ title: "Fun with The Collatz conjecture"
 runningheader: "For pdf output" # only for pdf output
 subtitle: "In and around Warsaw" # only for html output
 author: "Rethna Pulikkoonattu"
-date: "2025-05-20"
+date: "2025-06-06"
 
 output:
   tufte::tufte_html: default
@@ -32,9 +32,9 @@ options(htmltools.dir.version = FALSE)
 ```
 
 ::: {.fullwidth}
-During last month's IEEE 802.11 standards meeting in Warsaw, my daily city wandering proved unexpectedly enriching. The hotel's prime location in the old town, nestled near the University of Warsaw, while the conference unfolded in the central district, created the perfect excuse for meaningful walks that doubled as authentic cultural immersion.
+During last month's IEEE 802.11 standards meeting in Warsaw, my daily city wandering proved unexpectedly enriching. The hotel's prime location in the old town, nestled near the University of Warsaw, while the conference unfolded in the central district, created the perfect excuse for meaningful detours.
 
-This four-mile daily routine—a leisurely two-mile walk each morning and evening—transformed what could have been mundane commutes into opportunities for genuine discovery. The unhurried pace revealed Warsaw's hidden treasures: tucked-away historic corners, vibrant neighborhood life, and peaceful parks that typically escape notice during the rushed schedule of a standard conference visit. One such day, I found myself on a familiar street that I'd walked before—the one that passes by the University of Warsaw library. The library's exterior walls are adorned with stunning inscriptions spanning humanity's intellectual heritage: ancient Sanskrit, Hebrew, Greek, Arabic, and Latin texts alongside musical notation and iconic scientific achievements like DNA structures and Maxwell's equations.
+This daily four-mile ritual—a gentle two-mile stroll each morning and evening—turned ordinary travel time into moments of authentic exploration. Moving at an unhurried pace unveiled Warsaw's secret gems: quiet historic nooks, the pulse of street life, the city's bustling energy, and serene parks that remain invisible during the pace of typical conference schedules. One such day, I found myself on a familiar street that I'd walked before—the one that passes by the University of Warsaw library. The library's exterior walls are adorned with stunning inscriptions spanning humanity's intellectual heritage: ancient Sanskrit, Hebrew, Greek, Arabic, and Latin texts alongside musical notation and iconic scientific achievements like DNA structures and Maxwell's equations.
 :::
 
 

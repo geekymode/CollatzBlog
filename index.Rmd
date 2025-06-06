@@ -38,7 +38,7 @@ This daily four-mile ritualâ€”a gentle two-mile stroll each morning and eveningâ
 :::
 
 
-```{r figWall, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The Warsaw University Library wall featuring aspects of music,culture and sciences.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+```{r figWall, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The Warsaw University Library wall featuring aspects of music (Karol Szymanowski's Etude in B minor op. 4, no. 3),culture and sciences.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/warsaw_wall_all.jpg")
 ```
 

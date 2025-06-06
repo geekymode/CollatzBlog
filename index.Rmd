@@ -32,10 +32,18 @@ options(htmltools.dir.version = FALSE)
 ```
 
 ::: {.fullwidth}
-During my stay in Warsaw for the May IEEE 802.11 standards meeting, the usual city exploration took on a new dimension. With my hotel located in the old town near the University of Warsaw and the conference venue in the central district, the daily two-mile walks each morning and evening provided extended opportunities to discover more of the city's attractions and parks. This longer route revealed aspects of Warsaw that might have otherwise remained hidden during a typical conference visit. One such day, I found myself on a familiar street that I'd walked before—the one that passes by the University of Warsaw library. The library's exterior walls are adorned with stunning inscriptions spanning humanity's intellectual heritage: ancient Sanskrit, Hebrew, Greek, Arabic, and Latin texts alongside musical notation and iconic scientific achievements like DNA structures and Maxwell's equations.
+During last month's IEEE 802.11 standards meeting in Warsaw, my daily city wandering proved unexpectedly enriching. The hotel's prime location in the old town, nestled near the University of Warsaw, while the conference unfolded in the central district, created the perfect excuse for meaningful walks that doubled as authentic cultural immersion.
+
+This four-mile daily routine—a leisurely two-mile walk each morning and evening—transformed what could have been mundane commutes into opportunities for genuine discovery. The unhurried pace revealed Warsaw's hidden treasures: tucked-away historic corners, vibrant neighborhood life, and peaceful parks that typically escape notice during the rushed schedule of a standard conference visit. One such day, I found myself on a familiar street that I'd walked before—the one that passes by the University of Warsaw library. The library's exterior walls are adorned with stunning inscriptions spanning humanity's intellectual heritage: ancient Sanskrit, Hebrew, Greek, Arabic, and Latin texts alongside musical notation and iconic scientific achievements like DNA structures and Maxwell's equations.
 :::
 
-```{r figCollatzWarsaw, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The Warsaw University Library wall featuring aspects of music,culture and sciences.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+
+```{r figWall, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The Warsaw University Library wall featuring aspects of music,culture and sciences.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+knitr::include_graphics("images/warsaw_wall_all.jpg")
+```
+
+
+```{r figCollatzWarsaw, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The library wall displays some of the biggest breakthroughs in science and technology. You can see familiar items like the bell curve signifying the Central Limit Theorem (along with Gaussian distribution function), the number π, DNA structures, and Maxwell's famous equations unifying electromagnetism. There are also a couple of interesting math pieces: one shows a complex sequence from advanced mathematics, and another contains a short computer program that explores the famous Collatz conjecture—a simple but unsolved math puzzle that has puzzled mathematicians for decades. ", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/warsaw_collatz_annotated.jpg")
 ```
 
@@ -190,7 +198,7 @@ $$\begin{align}
 
 
 
-What makes the Collatz conjecture particularly fascinating is how it embodies the tension between simplicity and complexity that pervades mathematics. The problem requires no advanced mathematical background to understand, yet it has resisted the efforts of some of the world's brightest mathematical minds^[The Collatz conjecture remains one of mathematics' most intractable problems, with a solution appearing distant despite over fifty years of intensive research efforts. Jeffrey C. Lagarias has provided excellent comprehensive coverage of this research in his surveys and dedicated monograph on the subject [100, 101, 96]. Currently, the most significant advance toward resolving the conjecture comes from Terrence Tao, who demonstrated that almost all positive integers eventually reach 1 under Collatz iterations, at least in a probabilistic sense (Tao also has a blog post on this topic dated in 2019 [https://terrytao.wordpress.com/2019/09/10/almost-all-collatz-orbits-attain-almost-bounded-values/]). The problem's notorious difficulty is captured in Paul Erdős's famous assessment that "Mathematics is not yet ready for such problems," and he reportedly characterized it as "Hopeless. Absolutely hopeless." [102]. The conjecture's daunting nature is further emphasized by its inclusion as Problem 2 in Richard Guy's cautionary 1983 paper "Don't try to solve these problems!"]. Fields Medal winner Terence Tao has made significant progress on related problems, but the full conjecture remains open.
+What makes the Collatz conjecture particularly fascinating is how it embodies the tension between simplicity and complexity that pervades mathematics. The problem requires no advanced mathematical background to understand, yet it has resisted the efforts of some of the world's brightest mathematical minds^[The Collatz conjecture remains one of mathematics' most intractable problems, with a solution appearing distant despite over fifty years of intensive research efforts. Jeffrey C. Lagarias has provided excellent comprehensive coverage of this research in his surveys and dedicated monograph on the subject. Currently, the most significant advance toward resolving the conjecture comes from Terrence Tao, who demonstrated that almost all positive integers eventually reach 1 under Collatz iterations, at least in a probabilistic sense (Tao also has a blog post on this topic dated in 2019 [https://terrytao.wordpress.com/2019/09/10/almost-all-collatz-orbits-attain-almost-bounded-values/]). The problem's notorious difficulty is captured in Paul Erdős's famous assessment that "Mathematics is not yet ready for such problems," and he reportedly characterized it as "Hopeless. Absolutely hopeless.". The conjecture's daunting nature is further emphasized by its inclusion as Problem 2 in Richard Guy's cautionary 1983 paper "Don't try to solve these problems!"]. Fields Medal winner Terence Tao has made significant progress on related problems, but the full conjecture remains open.
 
 The conjecture connects to deep areas of mathematics including number theory, dynamical systems, and computational complexity. Some mathematicians have developed sophisticated techniques to analyze special cases or prove weaker versions of the statement, but the general problem maintains its grip on the mathematical imagination.
 
@@ -223,6 +231,9 @@ knitr::include_graphics("images/fig_collatz_snow15.png")
 knitr::include_graphics("images/collatz_river.png")
 ```
 
+```{r figCollatzHangingTree1000, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The first 1000 Collatz sequences shown as a graph resembling decorative beeds hanging. ", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+knitr::include_graphics("images/fig_collatz_hanging_tree_1000.png")
+```
 
 
 
@@ -262,17 +273,18 @@ While the traditional Collatz function involves repeatedly applying the rule "if
 knitr::include_graphics("images/collatz_fractal_demo.png")
 ```
 
+```{r figFracMarg1, fig.margin = TRUE, fig.cap = "Fractal behavior near n=77, within 25 iterations of the collatz process evolution.", message=TRUE, cache=TRUE, echo=FALSE, out.width='120%'}
+knitr::include_graphics("images/collatz_fractal_zoom-n77.0-maxIter25.png")
+```
 
-```{r figCollatzHangingTree1000, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "The first 1000 Collatz sequences shown as a graph resembling decorative beeds hanging. ", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
-knitr::include_graphics("images/fig_collatz_hanging_tree_1000.png")
+```{r figCollatzScatter, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "Stopping times. The stopping time of a Collatz sequence refers to the number of iterations required for a given starting value to reach 1. This fundamental measure varies dramatically across different initial values, exhibiting seemingly erratic behavior that defies simple prediction. For instance, while some numbers like powers of 2 have relatively short stopping times (since they only require repeated division by 2), others can have surprisingly long trajectories before converging to 1. The number 27, despite being relatively small, requires 111 steps to reach 1, demonstrating how stopping times can be unexpectedly large even for modest starting values. Understanding the distribution and behavior of stopping times remains one of the central challenges in Collatz conjecture research, as no general formula exists to predict the stopping time of an arbitrary positive integer without actually computing the entire sequence.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+knitr::include_graphics("images/collatz_scatter.png")
 ```
 
 Fractals represent infinitely complex, self-repeating patterns that maintain their structure across multiple scales. These mathematical objects emerge from the iterative application of simple processes through recursive feedback loops, generating visual representations of dynamic systems and chaotic behavior. Geometrically, fractals occupy non-integer dimensions, existing between the conventional whole-number dimensions of classical geometry.
 These intricate patterns pervade the natural world, appearing in diverse forms such as branching tree structures, meandering river networks, irregular coastlines, mountain ranges, cloud formations, spiral seashells, and swirling hurricane systems. The ubiquity of fractal geometry in nature reflects the underlying mathematical principles that govern complex systems and organic growth processes.
 
-```{r figFracMarg1, fig.margin = TRUE, fig.cap = "Fractal behavior near n=77, within 25 iterations of the collatz process evolution.", message=TRUE, cache=TRUE, echo=FALSE, out.width='120%'}
-knitr::include_graphics("images/collatz_fractal_zoom-n77.0-maxIter25.png")
-```
+
 
 ## Collatz fractal
 
@@ -307,7 +319,7 @@ knitr::include_graphics("images/collatz_grid_3x3.png")
 :::
 
 
-Zooming in reveals remarkably detailed, somewhat mystical structure emerges at the integer starting points.  
+A closer examination (i.e., zoom finer to the integers) reveals an intricate, almost mystical pattern emerging at integer starting points. In this visualization, colors represent the number of iterations required for each point to either converge to 1 or diverge to infinity (with the escape threshold set at |z| > 10,000 for demonstration purposes)..    
 
 ::: {.fullwidth} 
 
@@ -319,9 +331,7 @@ knitr::include_graphics("images/collatz_grid_3x3_fine.png")
 
 
 
-```{r figCollatzScatter, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "Stopping times. The stopping time of a Collatz sequence refers to the number of iterations required for a given starting value to reach 1. This fundamental measure varies dramatically across different initial values, exhibiting seemingly erratic behavior that defies simple prediction. For instance, while some numbers like powers of 2 have relatively short stopping times (since they only require repeated division by 2), others can have surprisingly long trajectories before converging to 1. The number 27, despite being relatively small, requires 111 steps to reach 1, demonstrating how stopping times can be unexpectedly large even for modest starting values. Understanding the distribution and behavior of stopping times remains one of the central challenges in Collatz conjecture research, as no general formula exists to predict the stopping time of an arbitrary positive integer without actually computing the entire sequence.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
-knitr::include_graphics("images/collatz_scatter.png")
-```
+
 
 ```{r figCollatzHist, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "Histogram of stopping times. The distribution of stopping times in Collatz sequences exhibits remarkable irregularity and has been the subject of extensive empirical investigation. Computational studies reveal that while most integers have relatively modest stopping times, the distribution has a heavy tail with occasional numbers requiring exceptionally long trajectories to reach 1. Statistical analyses suggest that stopping times appear to follow a roughly logarithmic growth pattern on average, though with substantial variance and no discernible pattern for predicting individual cases. Empirical evidence indicates that stopping times are distributed approximately according to a geometric-like distribution when properly normalized, but proving theoretical results about this distribution remains elusive. The apparent randomness in stopping time behavior has led some researchers to conjecture that Collatz sequences exhibit pseudo-random properties, making the distribution of stopping times one of the most intriguing yet unresolved aspects of the conjecture", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/collatz_hist.png")
@@ -332,17 +342,21 @@ Iterating this complex Collatz function produces remarkable fractal patterns. Th
 
 The boundary between convergent and divergent regions forms a fractal with infinite detail at every scale. Unlike the relatively simple dynamics on the real line, the complex plane reveals tendrils, spirals, and self-similar structures that extend infinitely. These patterns often exhibit characteristics reminiscent of the fractal images seen elsewhere.
 
-```{marginfigure, fig.cap="A quote from stackexchange Greg Muller"}
-*“So, the Collatz conjecture seems to say that there is some sort of abstract quantity like 'energy' which cannot be arbitrarily increased by adding 1. That is, no matter where you start, and no matter where this weird prime-shuffling action of adding 1 takes you, eventually the act of pulling out 2s takes enough energy out of the system so that you reach 1. I think it is for reasons like this that mathematicians suspect that a solution of the Collatz conjecture will open new horizons and develop new and important techniques in number theory.”* — Greg Muller, 2010 (math.stackexchange)[https://math.stackexchange.com/questions/2694/what-is-the-importance-of-the-collatz-conjecture].
-```
-
 # Whats the meaning of all these afterall?
 
 The exploration of complex Collatz fractals reveals something profound about the nature of mathematical truth itself. These stunning visualizations demonstrate how a deceptively simple rule can unleash boundless complexity and unexpected beauty when extended into the complex plane, offering potentially transformative insights into one of mathematics' greatest unsolved puzzles.
 
 Greg Muller's compelling perspective from a 2010 math.stackexchange discussion captures the deeper philosophical implications beautifully: 
 
-*“So, the Collatz conjecture seems to say that there is some sort of abstract quantity like 'energy' which cannot be arbitrarily increased by adding 1. That is, no matter where you start, and no matter where this weird prime-shuffling action of adding 1 takes you, eventually the act of pulling out 2s takes enough energy out of the system so that you reach 1. I think it is for reasons like this that mathematicians suspect that a solution of the Collatz conjecture will open new horizons and develop new and important techniques in number theory.”* — Greg Muller, 2010 (math.stackexchange)[https://math.stackexchange.com/questions/2694/what-is-the-importance-of-the-collatz-conjecture].
+::: {.fullwidth}
+<div style="background-color: #f0f8ff; border-left: 4px solid #4682b4; padding: 15px; margin: 20px 0; border-radius: 5px;">
+<em>"So, the Collatz conjecture seems to say that there is some sort of abstract quantity like 'energy' which cannot be arbitrarily increased by adding 1. That is, no matter where you start, and no matter where this weird prime-shuffling action of adding 1 takes you, eventually the act of pulling out 2s takes enough energy out of the system so that you reach 1. I think it is for reasons like this that mathematicians suspect that a solution of the Collatz conjecture will open new horizons and develop new and important techniques in number theory."</em>
+
+(math.stackexchange)[https://math.stackexchange.com/questions/2694/what-is-the-importance-of-the-collatz-conjecture].
+<div style="text-align: right; margin-top: 10px;">— Greg Muller, 2010</div>
+
+</div>
+:::
 
 This observation illuminates why the Collatz conjecture continues to captivate mathematicians worldwide. Far from being merely an abstract curiosity, it may hold keys to understanding fundamental principles governing mathematical systems—principles that could revolutionize our approach to number theory and unlock entirely new mathematical territories. The journey from an ordinary looking puzzle to these mesmerizing fractal landscapes reminds us that mathematics remains humanity's greatest adventure, where the simplest questions often lead to the most extraordinary detour and possible new discoveries.
 

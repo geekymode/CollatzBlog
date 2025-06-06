@@ -64,7 +64,7 @@ What was this mysterious code doing among the greatest achievements of human civ
 
 The Collatz conjecture^[The Collatz conjecture goes by numerous names, including the 3n+1 problem, the 3x+1 problem, Ulam's conjecture, Thwaites' conjecture, and the Syracuse problem, among others. The problem's origins appear to stem from Lothar Collatz's notebooks dating to the 1930s and was circulating among mathematicians by the 1950s [XX]. The earliest published reference appears to be H. S. Coxeter's 1971 written lecture [XX]. For a comprehensive exploration of the problem's history, background, and broader mathematical significance, Jeffrey C. Lagarias's survey article provides an excellent resource [XX].] stands as one of mathematics' most tantalizingly simple yet stubbornly unsolved problems. Named after German mathematician Lothar Collatz [^LotharCollatz], who proposed it in 1937, this conjecture deals with a deceptively straightforward process that has confounded mathematicians for nearly a century. 
 
-[^LotharCollatz]: Lothar Collatz, among other things have played a key role in the founding of spectral graph theory. https://en.wikipedia.org/wiki/Lothar_Collatz
+[^LotharCollatz]: Lothar Collatz, among other things has played a key role in the founding of spectral graph theory. https://en.wikipedia.org/wiki/Lothar_Collatz
 
 ```{r figCollatz1Margin, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "Collatz sequence for n=27. The sequence reaches 1 in 111 steps, making it one of the longer Collatz sequences for numbers under 30. ", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/fig_collatz27_math.png")
@@ -165,7 +165,7 @@ Step by step:
 - $f(4) = 4/2 = 2$ (since 4 is even)
 - $f(2) = 2/2 = 1$ (since 2 is even)
 
-The sequence reaches 1 in 17 steps.
+The sequence reaches 1 in 17 steps. 
 
 
 

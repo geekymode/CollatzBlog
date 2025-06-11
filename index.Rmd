@@ -73,7 +73,7 @@ What was this mysterious code doing among the greatest achievements of human civ
 
 # A deceptively simple looking puzzle
 
-The Collatz conjecture^[The Collatz conjecture goes by numerous names, including the 3n+1 problem, the 3x+1 problem, Ulam's conjecture, Thwaites' conjecture, and the Syracuse problem, among others. The problem's origins appear to stem from Lothar Collatz's notebooks dating to the 1930s and was circulating among mathematicians by the 1950s [XX]. The earliest published reference appears to be H. S. Coxeter's 1971 written lecture [XX]. For a comprehensive exploration of the problem's history, background, and broader mathematical significance, Jeffrey C. Lagarias's survey article provides an excellent resource [XX].] stands as one of mathematics' most tantalizingly simple yet stubbornly unsolved problems. Named after German mathematician Lothar Collatz [^LotharCollatz], who proposed it in 1937, this conjecture deals with a deceptively straightforward process that has confounded mathematicians for nearly a century. 
+The Collatz conjecture^[The Collatz conjecture goes by numerous names, including the 3n+1 problem, the 3x+1 problem, Ulam's conjecture, Thwaites' conjecture, and the Syracuse problem, among others. The problem's origins appear to stem from Lothar Collatz's notebooks dating to the 1930s and was circulating among mathematicians by the 1950s. The earliest published reference appears to be H. S. Coxeter's 1971 written lecture. For a comprehensive exploration of the problem's history, background, and broader mathematical significance, Jeffrey C. Lagarias's survey [article](#ref2) provides an excellent resource.] stands as one of mathematics' most tantalizingly simple yet stubbornly unsolved problems. Named after German mathematician Lothar Collatz [^LotharCollatz], who proposed it in 1937, this conjecture deals with a deceptively straightforward process that has confounded mathematicians for nearly a century. 
 
 [^LotharCollatz]: Lothar Collatz, among other things has played a key role in the founding of spectral graph theory. https://en.wikipedia.org/wiki/Lothar_Collatz
 
@@ -407,7 +407,7 @@ Shared vertices (vertex -> sequences that contain it):
 (Any[(1, [1]), (2, [2, 1]), (3, [3, 10, 5, 16, 8, 4, 2, 1]), (4, [4, 2, 1]), (5, [5, 16, 8, 4, 2, 1])], Dict(5 => [3, 5], 4 => [3, 4, 5], 16 => [3, 5], 2 => [2, 3, 4, 5], 10 => [3], 8 => [3, 5], 3 => [3], 1 => [1, 2, 3, 4, 5]))
 ```
 
-A companion Mathematica notebook is also provided to demonstrate additional advanced visualizations of the Collatz conjecture. The notebooks are available in the GitHub repository at https://github.com/geekymode/CollatzMathematica. To access the code, run:
+A companion Mathematica notebook is also provided to demonstrate additional advanced visualizations of the Collatz conjecture. The [notebooks](https://geekymode.github.io/CollatzMathematica/collatz_mathematica.html) are available in the GitHub repository at https://github.com/geekymode/CollatzMathematica. To access the code, run:
 
 ```bash
 git clone https://github.com/geekymode/CollatzMathematica.git

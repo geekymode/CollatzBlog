@@ -371,7 +371,7 @@ To support the analysis in this note, I developed a [Julia](https://julialang.or
 
 ## Installation
 
-This is soon to be an officially registered Julia package. Upon that it is a matter of opening a Julia session and enter
+This is soon to be an officially registered Julia package. Upon that it is a matter of opening a Julia session and enter:
 
 ```julia
 julia> using Pkg; Pkg.add("CollatzConjecture")

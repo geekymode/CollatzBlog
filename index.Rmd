@@ -351,7 +351,7 @@ The boundary between convergent and divergent regions forms a fractal with infin
 
 The exploration of complex Collatz fractals reveals something profound about the nature of mathematical truth itself. These stunning visualizations demonstrate how a deceptively simple rule can unleash boundless complexity and unexpected beauty when extended into the complex plane, offering potentially transformative insights into one of mathematics' greatest unsolved puzzles.
 
-Greg Muller's compelling perspective from a 2010 math.stackexchange discussion captures the deeper philosophical implications beautifully: 
+I found this fantastic insight from Greg Muller in a 2010 math.stackexchange discussion that I thought elegantly captured the surprisingly deep philosophical questions this puzzle raises: 
 
 ::: {.fullwidth}
 <div style="background-color: #f0f8ff; border-left: 4px solid #4682b4; padding: 15px; margin: 20px 0; border-radius: 5px;">
@@ -363,7 +363,7 @@ Greg Muller's compelling perspective from a 2010 math.stackexchange discussion c
 </div>
 :::
 
-This observation illuminates why the Collatz conjecture continues to captivate mathematicians worldwide. Far from being merely an abstract curiosity, it may hold keys to understanding fundamental principles governing mathematical systems—principles that could revolutionize our approach to number theory and unlock entirely new mathematical territories. The journey from an ordinary looking puzzle to these mesmerizing fractal landscapes reminds us that mathematics remains humanity's greatest adventure, where the simplest questions often lead to the most extraordinary detour and possible new discoveries.
+This observation in a way illuminates why the Collatz conjecture continues to captivate mathematicians worldwide. Far from being merely an abstract curiosity, it may hold keys to understanding fundamental principles governing mathematical systems—principles that could revolutionize our approach to number theory and unlock entirely new mathematical territories. The journey from an ordinary looking puzzle to these mesmerizing fractal landscapes reminds us that math remains as a greatest adventure, where the simplest questions often lead to the most extraordinary detour and possible new discoveries.
 
 # Software: Reproducing the results/figures
 

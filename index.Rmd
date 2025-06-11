@@ -6,7 +6,9 @@ author: "Rethna Pulikkoonattu"
 date: "2025-06-06"
 
 output:
-  tufte::tufte_html: default
+  tufte::tufte_html: 
+    includes:
+      in_header: meta_tags.html
   tufte::tufte_handout:
     citation_package: natbib
     latex_engine: xelatex
@@ -369,10 +371,16 @@ To support the analysis in this note, I developed a [Julia](https://julialang.or
 
 ## Installation
 
-This is now an officially registered Julia package. Open a Julia session and enter
+This is soon to be an officially registered Julia package. Upon that it is a matter of opening a Julia session and enter
 
 ```julia
 julia> using Pkg; Pkg.add("CollatzConjecture")
+```
+
+Until the registry is updated, alternatively, you can checkout the package by: 
+
+```julia
+julia> using Pkg; Pkg.add("https://github.com/geekymode/CollatzConjecture.jl")
 ```
 
 This will download the package and all the necessary dependencies for you. Once you import the package with

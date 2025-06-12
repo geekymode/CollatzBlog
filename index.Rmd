@@ -8,7 +8,6 @@ date: "2025-06-06"
 output:
   tufte::tufte_html: 
     includes:
-      in_header: meta_tags.html
   tufte::tufte_handout:
     citation_package: natbib
     latex_engine: xelatex
@@ -37,7 +36,7 @@ options(htmltools.dir.version = FALSE)
 
 During last month's IEEE 802.11 standards meeting in Warsaw, I found myself walking quite a bit due to the hotel location. We stayed in the old town near the University of Warsaw, while the conference was held in the central district, which meant a decent walk each day.
 
-The daily routine of walking about two miles each morning and evening to get to and from the conference turned out to be one of the better parts of the trip. A chance to notice things I would have missed otherwise—small historic streets, everyday street scenes, busy areas, and quiet parks that you don't really see when you're rushing between conference sessions. One such day, I found myself on a familiar street that I'd walked before—the one that passes by the University of Warsaw library. The library's exterior walls are adorned with stunning inscriptions spanning humanity's intellectual heritage: ancient Sanskrit, Hebrew, Greek, Arabic, and Latin texts alongside musical notation and iconic scientific achievements like DNA structures and Maxwell's equations.
+The daily four-mile walk to and from the conference became a highlight—revealing historic streets, street scenes, and quiet parks invisible when rushing between sessions. One such day, I found myself on a familiar street that I'd walked before—the one that passes by the University of Warsaw library. The library's exterior walls are adorned with stunning inscriptions spanning humanity's intellectual heritage: ancient Sanskrit, Hebrew, Greek, Arabic, and Latin texts alongside musical notation and iconic scientific achievements like DNA structures and Maxwell's equations.
 :::
 
 
@@ -380,7 +379,7 @@ julia> using Pkg; Pkg.add("CollatzConjecture")
 Until the registry is updated, alternatively, you can checkout the package by: 
 
 ```julia
-julia> using Pkg; Pkg.add("https://github.com/geekymode/CollatzConjecture.jl")
+Pkg.add("https://github.com/geekymode/CollatzConjecture.jl")
 ```
 
 This will download the package and all the necessary dependencies for you. Once you import the package with

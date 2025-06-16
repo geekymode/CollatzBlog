@@ -36,7 +36,7 @@ options(htmltools.dir.version = FALSE)
 
 During last month's IEEE 802.11 standards meeting in Warsaw, I found myself walking quite a bit due to the hotel location. We stayed in the old town near the University of Warsaw, while the conference was held in the central district, which meant a decent walk each day.
 
-The daily four-mile walk to and from the conference became a highlight—revealing historic streets, street scenes, and quiet parks invisible when rushing between sessions. One such day, I found myself on a familiar street that I'd walked before—the one that passes by the University of Warsaw library. The library's exterior walls are adorned with stunning inscriptions spanning humanity's intellectual heritage: ancient Sanskrit, Hebrew, Greek, Arabic, and Latin texts alongside musical notation and iconic scientific achievements like DNA structures and Maxwell's equations.
+The daily four mile walk to and from the conference became a highlight revealing historic streets, street scenes, and quiet parks invisible when rushing between sessions. One such day, I found myself on a familiar street that I'd walked before the one that passes by the University of Warsaw library. The library's exterior walls are adorned with stunning inscriptions spanning humanity's intellectual heritage: ancient Sanskrit, Hebrew, Greek, Arabic, and Latin texts alongside musical notation and iconic scientific achievements like DNA structures and Maxwell's equations.
 :::
 
 
@@ -45,7 +45,7 @@ knitr::include_graphics("images/warsaw_wall_all.jpg")
 ```
 
 
-```{r figCollatzWarsaw, fig.margin = TRUE, fig.width = 8, fig.height = 8, fig.cap = "The library wall displays some of the biggest breakthroughs in science and technology. You can see familiar items like the bell curve signifying the Central Limit Theorem (along with Gaussian distribution function), the number π, DNA structures, and Maxwell's famous equations unifying electromagnetism. There are also a couple of interesting math pieces: one shows a complex sequence from advanced mathematics, and another contains a short computer program that explores the famous Collatz conjecture—a simple but unsolved math puzzle that has puzzled mathematicians for decades. If you notice carefully, tucked in there is also a long sequence (homological algebra) $\\cdots \\to H_n(A) \\xrightarrow{i_*} H_n(X) \\xrightarrow{j_*} H_n(X,A) \\xrightarrow{\\partial} H_{n-1}(A) \\to \\cdots$, an application of the [Snake Lemma](https://en.wikipedia.org/wiki/Snake_lemma).", message = FALSE, cache = TRUE, echo = FALSE, out.width = '100%'}
+```{r figCollatzWarsaw, fig.margin = TRUE, fig.width = 8, fig.height = 8, fig.cap = "The library wall displays some of the biggest breakthroughs in science and technology. You can see familiar items like the bell curve signifying the Central Limit Theorem (along with Gaussian distribution function), the number π, DNA structures, and Maxwell's famous equations unifying electromagnetism. There are also a couple of interesting math pieces: one shows a complex sequence from advanced mathematics, and another contains a short computer program that explores the famous Collatz conjecture a simple but unsolved math puzzle that has puzzled mathematicians for decades. If you notice carefully, tucked in there is also a long sequence (homological algebra) $\\cdots \\to H_n(A) \\xrightarrow{i_*} H_n(X) \\xrightarrow{j_*} H_n(X,A) \\xrightarrow{\\partial} H_{n-1}(A) \\to \\cdots$, an application of the [Snake Lemma](https://en.wikipedia.org/wiki/Snake_lemma).", message = FALSE, cache = TRUE, echo = FALSE, out.width = '100%'}
 knitr::include_graphics("images/warsaw_collatz_annotated.jpg")
 ```
 
@@ -60,12 +60,12 @@ knitr::include_graphics("images/fig_collatz25.png")
 
 
 
-More than a decade ago, when first encountering this wall, I was more excited at spotting Maxwell's equations among the curated collection. But this time, something new emerged. Nestled above the Maxwell equations and DNA/RNA compound imagery was a small algorithmic snippet that had somehow been missed before—a brief program written in Pascal.
+More than a decade ago, when first encountering this wall, I was more excited at spotting Maxwell's equations among the curated collection. But this time, something new emerged. Nestled above the Maxwell equations and DNA/RNA compound imagery was a small algorithmic snippet that had somehow been missed before a brief program written in Pascal.
 
 What was this mysterious code doing among the greatest achievements of human civilization? Upon closer examination, the code revealed something beautifully appropriate: a program for generating the Collatz sequence, one of mathematics' most famous unsolved puzzles, quietly holding its place alongside the other monuments to human curiosity and discovery.
 
 ```{marginfigure, fig.cap="A quote from Richard Guy"}
-*“Don’t try to solve these problems!”* — Richard K. Guy, Amer. Math. Monthly 90 (1983), 35–41.
+*"Don't try to solve these problems!"* Richard K. Guy, Amer. Math. Monthly 90 (1983), 35 41.
 ```
 
 
@@ -86,7 +86,7 @@ The rules are almost childishly simple. Take any positive integer. If it's even,
 
 Consider starting with 7, an arbitrary odd number. Following our rules: 7 becomes $22 = 3 \times 7+1$, then 11, then 34, then 17, then 52, then 26, then 13, then 40, then 20, then 10, then 5, then 16, then 8, then 4, then 2, and finally 1. Once you reach 1, the sequence enters an endless loop: 1, 4, 2, 1, 4, 2, and so on.
 
-This behavior has been verified for every starting number tested, including all integers up to approximately $2^{68}$—that's roughly 295 quintillion numbers<sup>[1](#ref1)</sup> [^barina2021]. Computers have crunched through these calculations for decades, yet not a single counterexample has emerged. Despite this overwhelming computational evidence, no one has managed to prove that the pattern holds universally. 
+This behavior has been verified for every starting number tested, including all integers up to approximately $2^{68}$ that's roughly 295 quintillion numbers<sup>[1](#ref1)</sup> [^barina2021]. Computers have crunched through these calculations for decades, yet not a single counterexample has emerged. Despite this overwhelming computational evidence, no one has managed to prove that the pattern holds universally. 
 
 [^barina2021]: Barina, D. et al. (2021). Computational verification of the Collatz conjecture.
 
@@ -135,7 +135,7 @@ The sequence reaches 1 in 6 steps. However, this report focuses exclusively on $
 knitr::include_graphics("images/fig_collatz_tree_math25.png")
 ```
 
-```{r figAll, fig.margin = TRUE, fig.cap = "The Collatz conjecture has gained significant attention in recent years, with substantial monetary prizes offered for its resolution and appearances in popular culture, including references in webcomics such as this. The enduring appeal of this problem lies in its accessibility—anyone can understand the basic concept—yet its proof remains elusive despite extensive mathematical investigation.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+```{r figAll, fig.margin = TRUE, fig.cap = "The Collatz conjecture has gained significant attention in recent years, with substantial monetary prizes offered for its resolution and appearances in popular culture, including references in webcomics such as this. The enduring appeal of this problem lies in its accessibility anyone can understand the basic concept yet its proof remains elusive despite extensive mathematical investigation.", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/collatz_conjecture_xkcd.png")
 ```
 
@@ -181,7 +181,7 @@ The sequence reaches 1 in 17 steps.
 
 
 
-The conjecture's difficulty lies in its chaotic nature. Small changes in starting values can lead to dramatically different trajectories. Some numbers reach 1 quickly, while others embark on wild journeys, soaring to heights thousands of times larger than their starting point before eventually descending. The number 27, for instance, reaches a peak of 9,232 during its 111-step journey to 1.
+The conjecture's difficulty lies in its chaotic nature. Small changes in starting values can lead to dramatically different trajectories. Some numbers reach 1 quickly, while others embark on wild journeys, soaring to heights thousands of times larger than their starting point before eventually descending. The number 27, for instance, reaches a peak of 9,232 during its 111 step journey to 1.
 
 ::: {.fullwidth}
 The Collatz sequence starting from $x = 27$ using the function $f$ is:
@@ -241,7 +241,7 @@ knitr::include_graphics("images/fig_collatz_hanging_tree_1000.png")
 
 
 
-In this forward-flowing tree, different positive integers begin on separate branches but gradually merge as their sequences progress, creating a river-like pattern where tributaries join the main stream. For example, the sequences from 8, 16, 32, and other powers of 2 form a simple linear branch leading directly to 1, while more complex starting values like 27 or 15 follow winding paths that eventually intersect with simpler trajectories. The tree structure reveals how certain intermediate values, such as 4, 2, and 1, serve as convergence points where multiple sequences unite, creating bottlenecks in the flow toward the root. This convergent behavior demonstrates the conjecture's claim that all paths eventually funnel into the same final sequence ($4 \to 2 \to 1$), regardless of their diverse and seemingly chaotic initial trajectories. The tree's branching complexity reflects the unpredictable nature of Collatz sequences while illustrating the underlying unity that the conjecture asserts exists among all positive integers. 
+In this forward flowing tree, different positive integers begin on separate branches but gradually merge as their sequences progress, creating a river like pattern where tributaries join the main stream. For example, the sequences from 8, 16, 32, and other powers of 2 form a simple linear branch leading directly to 1, while more complex starting values like 27 or 15 follow winding paths that eventually intersect with simpler trajectories. The tree structure reveals how certain intermediate values, such as 4, 2, and 1, serve as convergence points where multiple sequences unite, creating bottlenecks in the flow toward the root. This convergent behavior demonstrates the conjecture's claim that all paths eventually funnel into the same final sequence ($4 \to 2 \to 1$), regardless of their diverse and seemingly chaotic initial trajectories. The tree's branching complexity reflects the unpredictable nature of Collatz sequences while illustrating the underlying unity that the conjecture asserts exists among all positive integers. 
 
 
 
@@ -254,7 +254,7 @@ The Collatz tree structure remarkably resembles underwater kelp forests or coral
 
 The numerous branches spread outward like fronds or coral polyps, each following its own meandering path through the mathematical seascape before being swept into the main current. Just as kelp forests create dense, layered canopies with multiple organisms sharing the same water column, different Collatz sequences occupy overlapping numerical territories, eventually merging into common channels like schools of fish converging toward feeding grounds.
 
-The intricate sequences branch and flow like underwater kelp forests, with longer, complex paths resembling graceful tendrils that drift and undulate through mathematical space before merging into deeper currents. Shorter sequences mirror the direct, upward growth of simpler aquatic vegetation. This oceanic analogy reflects the organic, almost biological nature of Collatz dynamics, where numerical sequences converge in patterns reminiscent of natural ecosystems—all flowing together to form a unified, tree-like structure anchored at the fundamental point of 1.
+The intricate sequences branch and flow like underwater kelp forests, with longer, complex paths resembling graceful tendrils that drift and undulate through mathematical space before merging into deeper currents. Shorter sequences mirror the direct, upward growth of simpler aquatic vegetation. This oceanic analogy reflects the organic, almost biological nature of Collatz dynamics, where numerical sequences converge in patterns reminiscent of natural ecosystems all flowing together to form a unified, tree like structure anchored at the fundamental point of 1.
 The visualization below, created in Julia and inspired by the elegant work at https://github.com/dkobak/collatz-viz, illustrates this phenomenon by mapping the first 10,000 Collatz sequences, revealing the striking botanical architecture that emerges from pure mathematical iteration.
 
 ::: {.fullwidth}
@@ -285,7 +285,7 @@ knitr::include_graphics("images/collatz_fractal_zoom-n77.0-maxIter25.png")
 knitr::include_graphics("images/collatz_scatter.png")
 ```
 
-Fractals represent infinitely complex, self-repeating patterns that maintain their structure across multiple scales. These mathematical objects emerge from the iterative application of simple processes through recursive feedback loops, generating visual representations of dynamic systems and chaotic behavior. Geometrically, fractals occupy non-integer dimensions, existing between the conventional whole-number dimensions of classical geometry.
+Fractals represent infinitely complex, self repeating patterns that maintain their structure across multiple scales. These mathematical objects emerge from the iterative application of simple processes through recursive feedback loops, generating visual representations of dynamic systems and chaotic behavior. Geometrically, fractals occupy non integer dimensions, existing between the conventional whole number dimensions of classical geometry.
 These intricate patterns pervade the natural world, appearing in diverse forms such as branching tree structures, meandering river networks, irregular coastlines, mountain ranges, cloud formations, spiral seashells, and swirling hurricane systems. The ubiquity of fractal geometry in nature reflects the underlying mathematical principles that govern complex systems and organic growth processes.
 
 
@@ -294,7 +294,7 @@ These intricate patterns pervade the natural world, appearing in diverse forms s
 
 Extending the Collatz function to the complex plane requires replacing the discrete parity test with a continuous analogue, since the concept of "even" or "odd" doesn't directly apply to complex numbers.
 
-The original integer-based Collatz function can be rewritten in several equivalent forms:
+The original integer based Collatz function can be rewritten in several equivalent forms:
 
 $$\begin{aligned}
 f(z) &= \begin{cases}
@@ -307,11 +307,11 @@ z/2 & \text{if } z \equiv 0 \pmod{2} \\
 
 The key insight for complexification comes from recognizing that for integer values of $z$, we have $\cos(\pi z) = (-1)^z$. This trigonometric identity provides a pathway to extend the function beyond integers to the entire complex plane.
 
-Substituting this relationship yields the complex-extended Collatz function:
+Substituting this relationship yields the complex extended Collatz function:
 
 $$f(z) = \frac{1}{4}  \left( 2 + 7z - (2 + 5z)\cos(\pi z) \right)$$
 
-This elegant formulation preserves the original behavior on integers while enabling smooth interpolation between the two Collatz operations. When $z$ is even, $\cos(\pi z) = 1$, recovering $f(z) = z/2$. When $z$ is odd, $\cos(\pi z) = -1$, yielding $f(z) = 3z + 1$. For non-integer complex values, the cosine function creates a continuous bridge between these discrete cases, allowing the Collatz process to operate seamlessly across the complex plane. 
+This elegant formulation preserves the original behavior on integers while enabling smooth interpolation between the two Collatz operations. When $z$ is even, $\cos(\pi z) = 1$, recovering $f(z) = z/2$. When $z$ is odd, $\cos(\pi z) = -1$, yielding $f(z) = 3z + 1$. For non integer complex values, the cosine function creates a continuous bridge between these discrete cases, allowing the Collatz process to operate seamlessly across the complex plane. 
 
 
 ::: {.fullwidth} 
@@ -337,14 +337,14 @@ knitr::include_graphics("images/collatz_grid_3x3_fine.png")
 
 
 
-```{r figCollatzHist, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "Histogram of stopping times. The distribution of stopping times in Collatz sequences exhibits remarkable irregularity and has been the subject of extensive empirical investigation. Computational studies reveal that while most integers have relatively modest stopping times, the distribution has a heavy tail with occasional numbers requiring exceptionally long trajectories to reach 1. Statistical analyses suggest that stopping times appear to follow a roughly logarithmic growth pattern on average, though with substantial variance and no discernible pattern for predicting individual cases. Empirical evidence indicates that stopping times are distributed approximately according to a geometric-like distribution when properly normalized, but proving theoretical results about this distribution remains elusive. The apparent randomness in stopping time behavior has led some researchers to conjecture that Collatz sequences exhibit pseudo-random properties, making the distribution of stopping times one of the most intriguing yet unresolved aspects of the conjecture", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
+```{r figCollatzHist, fig.margin = TRUE, fig.width= 8, fig.height= 8, fig.cap = "Histogram of stopping times. The distribution of stopping times in Collatz sequences exhibits remarkable irregularity and has been the subject of extensive empirical investigation. Computational studies reveal that while most integers have relatively modest stopping times, the distribution has a heavy tail with occasional numbers requiring exceptionally long trajectories to reach 1. Statistical analyses suggest that stopping times appear to follow a roughly logarithmic growth pattern on average, though with substantial variance and no discernible pattern for predicting individual cases. Empirical evidence indicates that stopping times are distributed approximately according to a geometric like distribution when properly normalized, but proving theoretical results about this distribution remains elusive. The apparent randomness in stopping time behavior has led some researchers to conjecture that Collatz sequences exhibit pseudo random properties, making the distribution of stopping times one of the most intriguing yet unresolved aspects of the conjecture", message=TRUE, cache=TRUE, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/collatz_hist.png")
 ```
 
 ## Fractal Emergence
-Iterating this complex Collatz function produces remarkable fractal patterns. The key lies in studying the basins of attraction—regions in the complex plane where initial values converge to specific behaviors under iteration. Some trajectories spiral toward fixed points, others exhibit periodic behavior, and many diverge to infinity in intricate spiral patterns.
+Iterating this complex Collatz function produces remarkable fractal patterns. The key lies in studying the basins of attraction regions in the complex plane where initial values converge to specific behaviors under iteration. Some trajectories spiral toward fixed points, others exhibit periodic behavior, and many diverge to infinity in intricate spiral patterns.
 
-The boundary between convergent and divergent regions forms a fractal with infinite detail at every scale. Unlike the relatively simple dynamics on the real line, the complex plane reveals tendrils, spirals, and self-similar structures that extend infinitely. These patterns often exhibit characteristics reminiscent of the fractal images seen elsewhere.
+The boundary between convergent and divergent regions forms a fractal with infinite detail at every scale. Unlike the relatively simple dynamics on the real line, the complex plane reveals tendrils, spirals, and self similar structures that extend infinitely. These patterns often exhibit characteristics reminiscent of the fractal images seen elsewhere.
 
 # Whats the meaning of all these afterall?
 
@@ -354,15 +354,15 @@ I found this fantastic insight from Greg Muller in a 2010 math.stackexchange dis
 
 ::: {.fullwidth}
 <div style="background-color: #f0f8ff; border-left: 4px solid #4682b4; padding: 15px; margin: 20px 0; border-radius: 5px;">
-<em>"So, the Collatz conjecture seems to say that there is some sort of abstract quantity like 'energy' which cannot be arbitrarily increased by adding 1. That is, no matter where you start, and no matter where this weird prime-shuffling action of adding 1 takes you, eventually the act of pulling out 2s takes enough energy out of the system so that you reach 1. I think it is for reasons like this that mathematicians suspect that a solution of the Collatz conjecture will open new horizons and develop new and important techniques in number theory."</em>
+<em>"So, the Collatz conjecture seems to say that there is some sort of abstract quantity like 'energy' which cannot be arbitrarily increased by adding 1. That is, no matter where you start, and no matter where this weird prime shuffling action of adding 1 takes you, eventually the act of pulling out 2s takes enough energy out of the system so that you reach 1. I think it is for reasons like this that mathematicians suspect that a solution of the Collatz conjecture will open new horizons and develop new and important techniques in number theory."</em>
 
 (math.stackexchange)[https://math.stackexchange.com/questions/2694/what-is-the-importance-of-the-collatz-conjecture].
-<div style="text-align: right; margin-top: 10px;">— Greg Muller, 2010</div>
+<div style="text-align: right; margin-top: 10px;">Greg Muller, 2010</div>
 
 </div>
 :::
 
-This observation in a way illuminates why the Collatz conjecture continues to captivate mathematicians worldwide. Far from being merely an abstract curiosity, it may hold keys to understanding fundamental principles governing mathematical systems—principles that could revolutionize our approach to number theory and unlock entirely new mathematical territories. The journey from an ordinary looking puzzle to these mesmerizing fractal landscapes reminds us that math remains as a greatest adventure, where the simplest questions often lead to the most extraordinary detour and possible new discoveries.
+This observation in a way illuminates why the Collatz conjecture continues to captivate mathematicians worldwide. Far from being merely an abstract curiosity, it may hold keys to understanding fundamental principles governing mathematical systems principles that could revolutionize our approach to number theory and unlock entirely new mathematical territories. The journey from an ordinary looking puzzle to these mesmerizing fractal landscapes reminds us that math remains as a greatest adventure, where the simplest questions often lead to the most extraordinary detour and possible new discoveries.
 
 # Software: Reproducing the results/figures
 
@@ -423,7 +423,7 @@ git clone https://github.com/geekymode/CollatzMathematica.git
 # References
 
 <a name="ref1"></a>
-1. Barina, David. "Convergence verification of the Collatz problem." The Journal of Supercomputing 77, no. 3 (2021): 2681-2688. https://www.fit.vut.cz/research/publication-file/12315/postprint.pdf 
+1. Barina, David. "Convergence verification of the Collatz problem." The Journal of Supercomputing 77, no. 3 (2021): 2681 2688. https://www.fit.vut.cz/research/publication-file/12315/postprint.pdf 
 
 <a name="ref2"></a>
 2. Lagarias, Jeffrey C. "The 3x+ 1 problem: An overview, 2021." URL https://arxiv. org/abs/2111.02635.
@@ -435,7 +435,7 @@ git clone https://github.com/geekymode/CollatzMathematica.git
 4. Tao, Terence. "Almost all orbits of the Collatz map attain almost bounded values." In Forum of Mathematics, Pi, vol. 10, p. e12. Cambridge University Press, 2022.
 
 <a name="ref5"></a>
-5. Coxeter, H. S. M. "Cyclic sequences and frieze patterns." The Ultimate Challenge: The (1971): 211-217.
+5. Coxeter, H. S. M. "Cyclic sequences and frieze patterns." The Ultimate Challenge: The (1971): 211 217.
 
 <a name="ref6"></a>
 6. https://www.prnewswire.com/news-releases/bakuage-offers-prize-of-120-million-jpy-to-whoever-solves-collatz-conjecture-math-problem-unsolved-for-84-years-301326629.html
